@@ -11,7 +11,7 @@ import {
   IconHome,
   IconNotification,
   IconProfile,
-  IconSearch,
+  IconSearchMedium,
 } from '@/assets/icons';
 import { TabProps } from '@/types';
 import { signOut } from '@/apis/auth';
@@ -107,7 +107,7 @@ const NavigatorBottom = () => {
                 height: verticalScale(40),
               }}
             >
-              <IconSearch />
+              <IconSearchMedium />
               <IconHamburger />
             </View>
           ),

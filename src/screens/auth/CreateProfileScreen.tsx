@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components/native';
 import { globalColor, heading, light } from '@/assets/themes';
-import { InputProfile } from '@/components/inputs';
+import { InputLine } from '@/components/inputs';
 import { ButtonMain } from '@/components/buttons';
 import { View, Alert } from 'react-native';
 import { randomProfileColor } from '@/utils/randomProfileColor';
@@ -16,9 +16,6 @@ interface StProfileProps {
 const NICKNAME_MIN_LENGTH = 2;
 
 const CreateProfileScreen = ({ navigation }: ScreenProps<'CreateProfileScreen'>) => {
-  const [isNicknameActive, setIsNicknameActive] = useState(false);
-  const [isDescriptionActive, setIsDescriptionActive] = useState(false);
-
   const [nickname, setNickname] = useState('');
   const [description, setDescription] = useState('');
 
@@ -59,21 +56,15 @@ const CreateProfileScreen = ({ navigation }: ScreenProps<'CreateProfileScreen'>)
         <StProfileText>{nickname.slice(0, 1)}</StProfileText>
       </StProfile>
       <View>
-        <InputProfile
+        <InputLine
           placeholder="닉네임은 최소 두글자 이상이어야 합니다."
-          isActive={isNicknameActive}
-          onFocus={() => setIsNicknameActive(true)}
-          onBlur={() => setIsNicknameActive(false)}
           label="닉네임"
           maxLength={15}
           value={nickname}
           onChangeText={(value: string) => setNickname(value)}
         />
-        <InputProfile
+        <InputLine
           placeholder="자기소개를 입력해보세요."
-          isActive={isDescriptionActive}
-          onFocus={() => setIsDescriptionActive(true)}
-          onBlur={() => setIsDescriptionActive(false)}
           label="자기소개"
           maxLength={100}
           value={description}

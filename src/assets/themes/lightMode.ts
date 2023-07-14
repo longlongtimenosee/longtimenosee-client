@@ -11,6 +11,7 @@ const light = {
     borderSub: '#8989894d',
   },
   backgroundSub: '#F0F0F0',
+  dim: 'rgba(0,0,0,0.8)',
 };
 
 export default light;

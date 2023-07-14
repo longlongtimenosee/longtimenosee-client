@@ -1,9 +1,7 @@
 import React from 'react';
 import { Pressable } from 'react-native';
 import styled from 'styled-components/native';
-import CheckTrue from '@/assets/icons/CheckTrue';
-import CheckFalseGray from '@/assets/icons/CheckFalseGray';
-import CheckFalsePrimary from '@/assets/icons/CheckFalsePrimary';
+import { IconCheckTrue, IconCheckFalse } from '@/assets/icons';
 import { globalColor, paragraph, light } from '@/assets/themes';
 
 interface StTextProps {
@@ -28,9 +26,9 @@ const ButtonCheckbox = ({
     <StButtonCheckboxContainer>
       <StButtonCheckbox>
         <Pressable onPress={toggleCheckBox}>
-          {isChecked && <CheckTrue />}
-          {!isChecked && textColor === 'gray' && <CheckFalseGray />}
-          {!isChecked && textColor === 'primary' && <CheckFalsePrimary />}
+          {isChecked && <IconCheckTrue />}
+          {!isChecked && textColor === 'gray' && <IconCheckFalse textColor="gray" />}
+          {!isChecked && textColor === 'primary' && <IconCheckFalse textColor="primary" />}
         </Pressable>
         <StText textColor={textColor}>{contents}</StText>
       </StButtonCheckbox>
